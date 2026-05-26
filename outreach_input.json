@@ -1,0 +1,82 @@
+[
+  {
+    "company": {"lusha_id": "1330486", "name": "Wolters Kluwer", "domain": "wolterskluwer.com", "industry": "Software Development", "location": "The Hague, Netherlands", "employee_count": 23082},
+    "manager": {"lusha_id": "334874328", "first_name": "Kees", "last_name": "Voogd", "full_name": "Kees Voogd", "title": "Director of Software Engineering", "linkedin_url": "https://www.linkedin.com/in/kjvoogd"}
+  },
+  {
+    "company": {"lusha_id": "8827713", "name": "HERE Technologies", "domain": "here.com", "industry": "Software Development / Mapping", "location": "Eindhoven, Netherlands", "employee_count": 9305},
+    "manager": {"lusha_id": "73607149", "first_name": "Remco", "last_name": "Timmer", "full_name": "Remco Timmer", "title": "Vice President of Product and Technology", "linkedin_url": "https://www.linkedin.com/in/remcotimmer"}
+  },
+  {
+    "company": {"lusha_id": "24354355", "name": "Croonwolter&dros", "domain": "croonwolterendros.nl", "industry": "IT Consulting & Engineering", "location": "Rotterdam, Netherlands", "employee_count": 2846},
+    "manager": {"lusha_id": "559426082", "first_name": "Charlie", "last_name": "Horst", "full_name": "Charlie Horst", "title": "Head of AI", "linkedin_url": "https://www.linkedin.com/in/charlie-ter-horst"}
+  },
+  {
+    "company": {"lusha_id": "33456041", "name": "Getronics", "domain": "getronics.com", "industry": "IT Services & Consulting", "location": "Duivendrecht, Netherlands", "employee_count": 5273},
+    "manager": {"lusha_id": "79871653", "first_name": "Stuart", "last_name": "Deignan", "full_name": "Stuart Deignan", "title": "Chief Executive Officer", "linkedin_url": "https://www.linkedin.com/in/stuartdeignan"}
+  },
+  {
+    "company": {"lusha_id": "6721780", "name": "HSO", "domain": "hso.com", "industry": "Microsoft Consulting & IT Services", "location": "Amsterdam, Netherlands", "employee_count": 2968},
+    "manager": {"lusha_id": "29842967", "first_name": "Freek", "last_name": "Cox-Aloo", "full_name": "Freek Cox-Aloo", "title": "Director of Engagement, Data and AI", "linkedin_url": "https://www.linkedin.com/in/freekcox"}
+  },
+  {
+    "company": {"lusha_id": "57306", "name": "Centric", "domain": "centric.eu", "industry": "IT Services & Software", "location": "Gouda, Netherlands", "employee_count": 2822},
+    "manager": {"lusha_id": "563744547", "first_name": "Aart", "last_name": "Jochem", "full_name": "Aart Jochem", "title": "Chief Information Security Officer", "linkedin_url": "https://www.linkedin.com/in/aart-jochem-6812442"}
+  },
+  {
+    "company": {"lusha_id": "14188140", "name": "JetBrains", "domain": "jetbrains.com", "industry": "Software Development Tools", "location": "Amsterdam, Netherlands", "employee_count": 2887},
+    "manager": {"lusha_id": "2072099278", "first_name": "Sergey", "last_name": "Ignatov", "full_name": "Sergey Ignatov", "title": "Director of Engineering", "linkedin_url": "https://www.linkedin.com/in/sergey-ignatov"}
+  },
+  {
+    "company": {"lusha_id": "14129477", "name": "Exact", "domain": "exact.com", "industry": "Business Software / ERP / SaaS", "location": "Delft, Netherlands", "employee_count": 2705},
+    "manager": {"lusha_id": "132224694", "first_name": "Johan", "last_name": "Gerritsen", "full_name": "Johan Gerritsen", "title": "Director of Technology", "linkedin_url": "https://www.linkedin.com/in/johan-gerrits-497a212"}
+  },
+  {
+    "company": {"lusha_id": "28385802", "name": "Mews", "domain": "mews.com", "industry": "Hospitality SaaS / Cloud Software", "location": "Amsterdam, Netherlands", "employee_count": 1519},
+    "manager": {"lusha_id": "1778253", "first_name": "Debora", "last_name": "Gallo", "full_name": "Debora Gallo", "title": "Vice President of Talent Development", "linkedin_url": "https://www.linkedin.com/in/deboragallo"}
+  },
+  {
+    "company": {"lusha_id": "22106475", "name": "Nebius", "domain": "nebius.com", "industry": "AI Cloud Infrastructure", "location": "Amsterdam, Netherlands", "employee_count": 1302},
+    "manager": {"lusha_id": "110570450", "first_name": "Gabor", "last_name": "Nemeth", "full_name": "Gabor Nemeth", "title": "Chief Information Officer", "linkedin_url": "https://www.linkedin.com/in/bagione"}
+  },
+  {
+    "company": {"lusha_id": "3999613", "name": "Irdeto", "domain": "irdeto.com", "industry": "Digital Security / Media Technology", "location": "Hoofddorp, Netherlands", "employee_count": 1146},
+    "manager": {"lusha_id": "713647891", "first_name": "Andy", "last_name": "Shaffer", "full_name": "Andy Shaffer", "title": "Director of Cloud Engineering and DevOps", "linkedin_url": "https://www.linkedin.com/in/andy-shaffer-g1v3h0p3"}
+  },
+  {
+    "company": {"lusha_id": "1120583", "name": "ICT Group", "domain": "ict.eu", "industry": "Industrial IT / Embedded Systems", "location": "Barendrecht, Netherlands", "employee_count": 2439},
+    "manager": {"lusha_id": "480835761", "first_name": "Arjen", "last_name": "De Blok", "full_name": "Arjen De Blok", "title": "Team Lead .NET/Azure", "linkedin_url": "https://www.linkedin.com/in/arjen-de-blok-b846b4"}
+  },
+  {
+    "company": {"lusha_id": "2580938", "name": "Simac", "domain": "simac.com", "industry": "IT Services & Infrastructure", "location": "Veldhoven, Netherlands", "employee_count": 1521},
+    "manager": {"lusha_id": "234628943", "first_name": "Stefan", "last_name": "Collet", "full_name": "Stefan Collet", "title": "Technology Lead", "linkedin_url": "https://www.linkedin.com/in/stefancollet"}
+  },
+  {
+    "company": {"lusha_id": "2383709", "name": "ORTEC", "domain": "ortec.com", "industry": "Operations Research / Analytics Software", "location": "Zoetermeer, Netherlands", "employee_count": 1202},
+    "manager": {"lusha_id": "1307145369", "first_name": "Georgios", "last_name": "Sarigiannidis", "full_name": "Georgios Sarigiannidis", "title": "Chief Executive Officer", "linkedin_url": "https://www.linkedin.com/in/georgiossarigiannidis"}
+  },
+  {
+    "company": {"lusha_id": "1375142", "name": "Levi9 Technology Services", "domain": "levi9.com", "industry": "Software Development & IT Consulting", "location": "Amsterdam, Netherlands", "employee_count": 1005},
+    "manager": {"lusha_id": "149755432", "first_name": "Boudewijn", "last_name": "Haas", "full_name": "Boudewijn Haas", "title": "Director of Cloud and Partnerships", "linkedin_url": "https://www.linkedin.com/in/boudewijnhaas"}
+  },
+  {
+    "company": {"lusha_id": "33863869", "name": "ilionx", "domain": "ilionx.com", "industry": "IT Consulting & Managed Services", "location": "Utrecht, Netherlands", "employee_count": 1282},
+    "manager": {"lusha_id": "256226489", "first_name": "Anita", "last_name": "Wartenbergh", "full_name": "Anita Wartenbergh", "title": "Director of Human Resources", "linkedin_url": "https://www.linkedin.com/in/anita-wartenbergh-6246154"}
+  },
+  {
+    "company": {"lusha_id": "16477447", "name": "Axians NL", "domain": "axians.nl", "industry": "IT Infrastructure & Network Services", "location": "Laren, Netherlands", "employee_count": 1043},
+    "manager": {"lusha_id": "49846490", "first_name": "Jeroen", "last_name": "Kemps", "full_name": "Jeroen Kemps", "title": "Head of ICT", "linkedin_url": "https://www.linkedin.com/in/kaboem"}
+  },
+  {
+    "company": {"lusha_id": "9356415", "name": "Fellowmind", "domain": "fellowmind.com", "industry": "Microsoft Consulting / Business Applications", "location": "Amersfoort, Netherlands", "employee_count": 2081},
+    "manager": {"lusha_id": "591816798", "first_name": "Anneke", "last_name": "Nobel", "full_name": "Anneke Nobel", "title": "Chief Human Resources Officer", "linkedin_url": "https://www.linkedin.com/in/annekenobel"}
+  },
+  {
+    "company": {"lusha_id": "1801173", "name": "Topicus", "domain": "topicus.nl", "industry": "Software Development / Public Sector IT", "location": "Deventer, Netherlands", "employee_count": 945},
+    "manager": {"lusha_id": "504520182", "first_name": "Gerben", "last_name": "Hilberink", "full_name": "Gerben Hilberink", "title": "Managing Director", "linkedin_url": "https://www.linkedin.com/in/gerbenhilberink"}
+  },
+  {
+    "company": {"lusha_id": "9453825", "name": "ChipSoft Nederland", "domain": "chipsoft.nl", "industry": "Healthcare IT Software", "location": "Amsterdam, Netherlands", "employee_count": 996},
+    "manager": {"lusha_id": "123643407", "first_name": "Myrthe", "last_name": "Sennema", "full_name": "Myrthe Sennema", "title": "Head of Recruitment", "linkedin_url": "https://www.linkedin.com/in/myrthesennema"}
+  }
+]
