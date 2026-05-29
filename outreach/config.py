@@ -58,6 +58,7 @@ SHEET_HEADERS = [
     "LinkedIn URL",
     "Email",
     "Rol waarvoor ze recruiten",
+    "Vacature Link",
     "Bericht",
     "Status",
     "Notities",

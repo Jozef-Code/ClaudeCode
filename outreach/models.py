@@ -1,6 +1,7 @@
 from dataclasses import dataclass, field
 from typing import Optional
 from datetime import datetime
+from urllib.parse import quote_plus
 
 
 @dataclass
@@ -35,8 +36,15 @@ class OutreachRecord:
     skill_1: str
     skill_2: str
     message: str
+    job_url: str = ""
     status: str = "Te versturen"
     notes: str = ""
+
+    def _build_job_search_url(self) -> str:
+        if self.job_url:
+            return self.job_url
+        q = quote_plus(f'"{self.company.name}" {self.inferred_role}')
+        return f"https://www.google.com/search?q=site:linkedin.com/jobs+{q}"
 
     def to_sheet_row(self) -> list:
         return [
@@ -51,6 +59,7 @@ class OutreachRecord:
             self.hiring_manager.linkedin_url or "",
             self.hiring_manager.email or "",
             self.inferred_role,
+            self._build_job_search_url(),
             self.message,
             self.status,
             self.notes,

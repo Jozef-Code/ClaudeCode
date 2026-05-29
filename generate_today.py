@@ -152,6 +152,7 @@ def build_records() -> list[OutreachRecord]:
             date=TODAY, company=company, hiring_manager=manager,
             inferred_role=item["role"], skill_1=item["skill_1"],
             skill_2=item["skill_2"], message=message,
+            job_url=item.get("job_url", ""),
         )
         save_outreach_record(record)
         records.append(record)
