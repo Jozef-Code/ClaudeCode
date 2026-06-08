@@ -3,4 +3,5 @@ __pycache__/
 *.db
 outreach_output.csv
 outreach_day*.csv
+today_batch.json
 .env

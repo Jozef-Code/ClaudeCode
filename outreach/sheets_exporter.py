@@ -16,6 +16,6 @@ def records_to_csv(records: List[OutreachRecord]) -> str:
     return output.getvalue()
 
 
-def build_sheet_title() -> str:
-    today = datetime.now().strftime("%Y-%m-%d")
-    return f"IT Outreach Pipeline - {today}"
+def build_sheet_title(date: str = None) -> str:
+    d = date or datetime.now().strftime("%Y-%m-%d")
+    return f"IT Outreach Pipeline - {d}"
