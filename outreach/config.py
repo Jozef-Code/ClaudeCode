@@ -66,10 +66,27 @@ SHEET_HEADERS = [
 
 MESSAGE_TEMPLATE = """Hi {hiring_manager_first_name},
 
-Wij kennen elkaar nog niet maar ik zag dat jullie op zoek waren naar een {role_name} met {skill_1} en {skill_2} ervaring.
+Ik zag dat jullie zoeken naar een {role_name} — ik spreek op dit moment een aantal sterke kandidaten met {skill_1} en {skill_2} achtergrond die actief op zoek zijn.
 
-Ik spreek momenteel een paar {role_name} die goed aansluiten op dit type omgeving, dus wilde even checken of jullie nog openstaan voor extra instroom naast jullie huidige traject.
+Kan ik je een korte samenvatting sturen van het meest passende profiel?
 
-Zelf kom ik ook uit de IT, dus ik kijk vrij inhoudelijk mee op dit soort rollen scheelt vaak in snelheid en kwaliteit van de match.
+Met vriendelijke groet,
+Jozef
+Next-Hire | jozef@next-hire.nl"""
 
-Als het relevant is, kom ik graag even kort (15 min) in contact hierover."""
+# Keywords that indicate a recruitment/staffing agency — exclude these from outreach
+AGENCY_KEYWORDS = [
+    "recruitment", "staffing", "werving", "uitzend",
+    "detachering", "payroll", "headhunt", "personeelsdienst",
+]
+
+# IT roles to search on Indeed.nl (used by Claude when building today_batch.json)
+INDEED_ROLES = [
+    "developer",
+    "security engineer",
+    "DevOps engineer",
+    "tech lead",
+    "security officer",
+    "software engineer",
+    "applicatiebeheerder",
+]

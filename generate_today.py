@@ -1,27 +1,31 @@
 #!/usr/bin/env python3
 """
 Dagelijkse outreach batch runner.
-Leest vandaag's batch uit today_batch.json (gegenereerd door Claude op basis van LinkedIn vacatures).
+Leest vandaag's batch uit today_batch.json (gegenereerd door Claude op basis van Indeed vacatures).
 
-Gebruik: python generate_today.py
-         python generate_today.py custom_batch.json
+Gebruik:
+  python generate_today.py                    # genereer CSV
+  python generate_today.py --send             # genereer + verstuur e-mails
+  python generate_today.py --dry-run          # genereer + preview (geen verzending)
+  python generate_today.py custom_batch.json  # gebruik ander batchbestand
 """
 import sys
 import json
 import os
+import argparse
 from outreach.models import Company, HiringManager, OutreachRecord
 from outreach.storage import save_outreach_record, get_contacted_company_ids, init_db
 from outreach.sheets_exporter import records_to_csv, build_sheet_title
 
 TEMPLATE = """Hi {first_name},
 
-Wij kennen elkaar nog niet maar ik zag dat jullie op zoek waren naar een {role} met {skill_1} en {skill_2} ervaring.
+Ik zag dat jullie zoeken naar een {role} — ik spreek op dit moment een aantal sterke kandidaten met {skill_1} en {skill_2} achtergrond die actief op zoek zijn.
 
-Ik spreek momenteel een paar {role} die goed aansluiten op dit type omgeving, dus wilde even checken of jullie nog openstaan voor extra instroom naast jullie huidige traject.
+Kan ik je een korte samenvatting sturen van het meest passende profiel?
 
-Zelf kom ik ook uit de IT, dus ik kijk vrij inhoudelijk mee op dit soort rollen scheelt vaak in snelheid en kwaliteit van de match.
-
-Als het relevant is, kom ik graag even kort (15 min) in contact hierover."""
+Met vriendelijke groet,
+Jozef
+Next-Hire | jozef@next-hire.nl"""
 
 
 def load_batch(path: str = "today_batch.json") -> tuple[str, list]:
@@ -84,14 +88,32 @@ def build_records(date: str, entries: list) -> list[OutreachRecord]:
 
 
 if __name__ == "__main__":
-    batch_file = sys.argv[1] if len(sys.argv) > 1 else "today_batch.json"
-    if not os.path.exists(batch_file):
-        print(f"Fout: {batch_file} niet gevonden.")
+    parser = argparse.ArgumentParser(description="Outreach batch verwerker")
+    parser.add_argument(
+        "batch_file",
+        nargs="?",
+        default="today_batch.json",
+        help="Pad naar het batchbestand (standaard: today_batch.json)",
+    )
+    parser.add_argument(
+        "--send",
+        action="store_true",
+        help="Verstuur e-mails na het genereren (vraagt om bevestiging)",
+    )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Toon e-mail preview zonder daadwerkelijk te versturen",
+    )
+    args = parser.parse_args()
+
+    if not os.path.exists(args.batch_file):
+        print(f"Fout: {args.batch_file} niet gevonden.")
         print("Genereer eerst today_batch.json via Claude (draai de dagelijkse outreach pipeline).")
         sys.exit(1)
 
     init_db()
-    date, entries = load_batch(batch_file)
+    date, entries = load_batch(args.batch_file)
     print(f"\n=== IT Outreach Batch - {date} ===")
     print(f"Verwerken van {len(entries)} bedrijven...\n")
 
@@ -108,3 +130,21 @@ if __name__ == "__main__":
     print(f"\n✓ {len(records)} berichten klaar")
     print(f"✓ CSV opgeslagen: outreach_output.csv")
     print(f"\nSheet titel: {build_sheet_title(date)}")
+
+    if args.send or args.dry_run:
+        from outreach.gmail_sender import send_batch
+        from outreach.storage import update_record_status
+
+        result = send_batch(records, dry_run=args.dry_run)
+
+        if not args.dry_run and result["sent"] > 0:
+            for record in records:
+                email = record.hiring_manager.email
+                if email and email not in result["failed"]:
+                    update_record_status(record.company.lusha_id, "Verstuurd")
+
+        print(
+            f"\n[email] Verstuurd: {result['sent']} | "
+            f"Overgeslagen: {result['skipped']} | "
+            f"Mislukt: {len(result['failed'])}"
+        )

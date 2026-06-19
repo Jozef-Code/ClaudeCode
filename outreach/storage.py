@@ -82,6 +82,18 @@ def save_outreach_record(record: OutreachRecord):
         conn.commit()
 
 
+def update_record_status(company_id: str, new_status: str):
+    init_db()
+    with _conn() as conn:
+        conn.execute(
+            """UPDATE outreach_records SET status = ?
+               WHERE company_id = ?
+               AND id = (SELECT MAX(id) FROM outreach_records WHERE company_id = ?)""",
+            (new_status, company_id, company_id)
+        )
+        conn.commit()
+
+
 def get_stats() -> dict:
     init_db()
     with _conn() as conn:
